@@ -1,15 +1,9 @@
 [phases.setup]
-nixPkgs = ["python39", "nodejs-18_x", "npm"]
+nixPkgs = ["python39"]
 
 [phases.install]
 cmds = [
-    "pip install -r requirements.txt",
-    "cd next-app && npm install"
-]
-
-[phases.build]
-cmds = [
-    "cd next-app && npm run build"
+    "pip install -r requirements.txt"
 ]
 
 [start]
