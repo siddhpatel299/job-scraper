@@ -11,6 +11,10 @@ reportlab==4.0.7
 matplotlib==3.8.2
 plotly==5.17.0
 jinja2==3.1.2
-rapidfuzz==3.14.1
-weasyprint==60.2
+# rapidfuzz 3.x wheels are missing on some build platforms (Railway/Nixpacks).
+# 2.13.7 is a stable, pure-Python fallback compatible with our use.
+rapidfuzz==2.13.7
+# weasyprint requires system libs (cairo/pango) not available on serverless builds.
+# It is not used in the current code path; keep it out to avoid build failures.
+# weasyprint==60.2
 google-search-results==2.4.2
